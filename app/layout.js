@@ -4,7 +4,6 @@ import Footer from "../components/layout/Footer";
 import MobileActionBar from "../components/layout/MobileActionBar";
 import MotionProvider from "../components/motion/MotionProvider";
 import RouteMotion from "../components/motion/RouteMotion";
-import PauseMotionControl from "../components/motion/PauseMotionControl";
 import OpeningExperience from "../components/media/OpeningExperience";
 import { business, sourceUrls } from "../content/site";
 import { siteUrl } from "../lib/metadata";
@@ -23,4 +22,4 @@ export const viewport={themeColor:"#F8F3EC",width:"device-width",initialScale:1}
 const days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const jsonLd={"@context":"https://schema.org","@type":"Dentist","@id":`${siteUrl}/#clinic`,name:business.name,url:siteUrl,telephone:business.phoneE164,email:business.email,image:`${siteUrl}/brand/social-preview.jpg`,address:{"@type":"PostalAddress",streetAddress:"Royal Emerald Complex, Shop no. 5, Bamado",addressLocality:"Chinchinim",addressRegion:"Goa",postalCode:"403715",addressCountry:"IN"},openingHoursSpecification:[{"@type":"OpeningHoursSpecification",dayOfWeek:days,opens:"09:30",closes:"13:00"},{"@type":"OpeningHoursSpecification",dayOfWeek:days,opens:"15:00",closes:"18:30"}],sameAs:[sourceUrls.instagram],description:"Dental clinic in Chinchinim, Goa offering general, restorative, orthodontic, pediatric, endodontic, cosmetic and preventive dental care."};
 
-export default function RootLayout({children}){return <html lang="en"><body><a className="skip-link" href="#main-content">Skip to content</a><MotionProvider><OpeningExperience/><Header/><RouteMotion>{children}</RouteMotion><Footer/><PauseMotionControl/><MobileActionBar/></MotionProvider><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/></body></html>}
+export default function RootLayout({children}){return <html lang="en" data-motion="running"><body><a className="skip-link" href="#main-content">Skip to content</a><noscript><style>{`.opening{display:none!important}`}</style></noscript><MotionProvider><OpeningExperience/><Header/><RouteMotion>{children}</RouteMotion><Footer/><MobileActionBar/></MotionProvider><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/></body></html>}

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence,motion } from "framer-motion";
 import { useEffect,useRef,useState } from "react";
-import PauseMotionControl from "../motion/PauseMotionControl";
 
 const navGroups=[
  {label:"Clinic",links:[{href:"/our-clinic",label:"Our Clinic"},{href:"/dentists",label:"Meet the Dentists"},{href:"/gallery",label:"Gallery"}]},
@@ -28,7 +27,7 @@ export default function Header(){
   <AnimatePresence>{open&&<motion.div className="mobile-nav-wrap" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}><motion.nav ref={panel} id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation" initial={{y:-20}} animate={{y:0}} exit={{y:-20}} transition={{duration:.3}}>
     <div className="mobile-nav__top"><span>Navigate</span><button type="button" onClick={()=>setOpen(false)} aria-label="Close menu">Close ×</button></div>
     {navGroups.map(g=><div className="mobile-nav__group" key={g.label}><p>{g.label}</p>{g.links.map(l=><Link key={l.href} href={l.href} onClick={()=>setOpen(false)}>{l.label}<span>↗</span></Link>)}</div>)}
-    <Link className="button" href="/contact">Request an appointment</Link><PauseMotionControl/>
+    <Link className="button" href="/contact">Request an appointment</Link>
   </motion.nav></motion.div>}</AnimatePresence>
  </>;
 }

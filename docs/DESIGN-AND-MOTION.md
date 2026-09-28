@@ -55,11 +55,11 @@ Section reveals are generally 0.65–0.75 s. Background cycles are intentionally
 - pauses when the tab is hidden;
 - cleans up `requestAnimationFrame`, ResizeObserver, IntersectionObserver and visibility listeners.
 
-`OpeningExperience` plays the muted owner-supplied clip before the homepage, once per tab session, with skip and reduced-motion choices. The actual homepage hero uses official clinic photography. `FilmChapter` provides two dedicated film placements with still-image fallback, offscreen pause and reduced-motion support.
+`OpeningExperience` plays the muted owner-supplied clip before the homepage on every direct load, with Skip and autoplay-blocked fallback controls. The actual homepage hero uses official clinic photography. `FilmChapter` provides two dedicated film placements with still-image fallback and offscreen resource management.
 
-## Reduced motion and manual pause
+## Continuous motion
 
-`MotionProvider` combines `prefers-reduced-motion` with the visitor's manual pause state. Decorative canvas work is not started when paused/reduced. Framer Motion uses `MotionConfig reducedMotion="user"`. CSS also removes transition/animation duration under the media query. The pause state is remembered in `localStorage`.
+`MotionProvider` keeps the site's decorative motion running on all devices. Framer Motion uses `MotionConfig reducedMotion="never"`. The global pause button and saved pause state have been removed. Offscreen canvas and video work can still stop when invisible to conserve device resources, then resumes when visible.
 
 Information, links, forms, accordions and gallery controls do not depend on animation.
 
@@ -68,7 +68,6 @@ Information, links, forms, accordions and gallery controls do not depend on anim
 - `-2`: scene media/backplates
 - scene internal: plate → light → Canvas → grain
 - `2`: `.wrap` content
-- `70`: motion pause control
 - `80`: mobile action bar
 - `85–90`: navigation / mobile menu
 - `120`: gallery lightbox
