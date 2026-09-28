@@ -1,0 +1,21 @@
+{
+  "name": "dental-nation-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:content": "node scripts/check-content.mjs",
+    "qa:static": "node scripts/qa-static.mjs",
+    "fetch:official-assets": "node scripts/fetch-official-assets.mjs",
+    "preview": "next start"
+  },
+  "dependencies": {
+    "framer-motion": "11.11.17",
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "type": "module"
+}

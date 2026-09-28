@@ -1,0 +1,1 @@
+export default function SectionIntro({eyebrow,title,lede,align="left",as="h2"}){const Tag=as;return <div className={`section-intro section-intro--${align}`}><p className="eyebrow">{eyebrow}</p><Tag>{title}</Tag>{lede&&<p className="section-lede">{lede}</p>}</div>}

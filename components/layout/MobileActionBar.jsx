@@ -1,0 +1,2 @@
+import { telHref,waUrl,directionsUrl } from "../../lib/business";
+export default function MobileActionBar(){return <div className="mobile-action-bar" aria-label="Quick contact actions"><a href={telHref}>Call</a><a href={waUrl("Hi Dental Nation Clinic, I would like to ask about an appointment.")} target="_blank" rel="noreferrer">WhatsApp</a><a href={directionsUrl} target="_blank" rel="noreferrer">Directions</a></div>}

@@ -1,0 +1,6 @@
+"use client";
+import { useState } from "react";
+import { AnimatePresence,motion } from "framer-motion";
+import { useMotionPreference } from "../motion/MotionProvider";
+export default function Accordion({items}){return <div className="accordion">{items.map((it,i)=><Item key={it.q} item={it} i={i}/>)}</div>}
+function Item({item,i}){const [open,setOpen]=useState(i===0);const {motionPaused}=useMotionPreference();const id=`faq-${i}-${item.q.replace(/\W+/g,'-').toLowerCase()}`;return <motion.div className={`accordion__item ${open?'is-open':''}`} initial={motionPaused?false:{opacity:0,x:18}} whileInView={{opacity:1,x:0}} viewport={{once:true,amount:.5}} transition={{duration:.45,delay:i*.045}}><h3><button type="button" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-controls={id}><span>{item.q}</span><motion.span className="accordion__plus" aria-hidden="true" animate={motionPaused?undefined:{rotate:open?90:0,scale:open?1.08:1}}>{open?'−':'+'}</motion.span></button></h3><AnimatePresence initial={false}>{open&&<motion.div id={id} role="region" initial={motionPaused?false:{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={motionPaused?undefined:{height:0,opacity:0}} transition={{duration:.3}}><p>{item.a}</p></motion.div>}</AnimatePresence></motion.div>}

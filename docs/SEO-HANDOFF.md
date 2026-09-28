@@ -1,0 +1,9 @@
+# Search and image handoff
+
+The site has unique page titles and descriptions, canonical URLs, Open Graph and Twitter preview metadata, a crawlable sitemap, robots instructions, Dentist business data, and treatment-specific Service/Breadcrumb data. Each treatment page links to relevant services and has an image with descriptive alt text. The homepage presents four featured treatments and links to the remaining eleven; the full treatment index links to all fifteen.
+
+Treatment images were selected by Dental Nation on its public [services page](https://www.dentalnationclinic.com/services-4), downloaded from its Wix media IDs by `scripts/fetch-treatment-photos.py`, and compressed to local WebP files in `public/images/treatments/official/`. Some originals are photographs, others are clinical illustrations or comparison graphics; image labels identify them accurately. The original image resolution varies, so future replacement with high-resolution clinic-owned photography would improve the detail pages further.
+
+Before publishing, set `NEXT_PUBLIC_SITE_URL` to the final domain and rebuild so canonical, sitemap and structured-data URLs point to the live site. Confirm that the clinic controls the domain and that the old site's relevant URLs redirect appropriately. After launch, connect Google Search Console, submit `/sitemap.xml`, inspect important treatment URLs and monitor indexing. The technical work helps search engines understand the site; rankings and indexing are not guaranteed.
+
+Reference guidance: [Google Search Central SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide), [Image SEO best practices](https://developers.google.com/search/docs/appearance/google-images), and [Next.js metadata documentation](https://nextjs.org/docs/app/getting-started/metadata-and-og-images).

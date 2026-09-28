@@ -1,0 +1,632 @@
+{
+  "generatedAt": "2026-09-28T10:48:35.199Z",
+  "officialSources": {
+    "home": "https://www.dentalnationclinic.com/",
+    "treatments": "https://www.dentalnationclinic.com/services-4",
+    "contact": "https://www.dentalnationclinic.com/contact-5",
+    "articles": "https://www.dentalnationclinic.com/blog",
+    "instagram": "https://www.instagram.com/dentalnationclinic/",
+    "dolphinRepo": "https://github.com/vauldyyyy/dolphin-aquarium-enhanced"
+  },
+  "note": "Reviewed handoff includes 4 public dentist portraits, 10 clinic photographs and 15 treatment visuals from Dental Nation's published services page. Treatment visuals are a mix of photographs and explanatory illustrations; see docs/SEO-HANDOFF.md and scripts/fetch-treatment-photos.py. Abstract SVG fallbacks remain available.",
+  "assets": [
+    {
+      "file": "public/images/treatments/official/*.webp",
+      "kind": "15 official service-page treatment visuals",
+      "source": "Dental Nation's public services page; exact Wix media IDs recorded in scripts/fetch-treatment-photos.py",
+      "sourceUrl": "https://www.dentalnationclinic.com/services-4",
+      "usage": ["homepage treatment showcase", "treatment index", "treatment detail pages"],
+      "alt": "Individual image descriptions in content/treatment-media.js",
+      "focalPoint": "CSS object-cover per card",
+      "mobileCrop": "Image subject kept central"
+    },
+    {
+      "file": "public/brand/logo.svg",
+      "kind": "brand",
+      "dimensions": "780×190 SVG",
+      "source": "Recreated faithfully as a web vector from Dental Nation's publicly visible logo on its official Wix site",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_eab1a333f89b421c945f0c3d08abd6d2~mv2.jpg/v1/fit/w_2500,h_1330,al_c/f2a471_eab1a333f89b421c945f0c3d08abd6d2~mv2.jpg",
+      "usage": [
+        "header",
+        "footer"
+      ],
+      "alt": "Dental Nation Clinic",
+      "focalPoint": "center",
+      "mobileCrop": "none"
+    },
+    {
+      "file": "public/brand/mark.svg",
+      "kind": "brand",
+      "dimensions": "200×200 SVG",
+      "source": "Web mark derived from official tooth-line logo",
+      "usage": [
+        "favicon",
+        "brand detail"
+      ],
+      "alt": "Dental Nation tooth mark",
+      "focalPoint": "center",
+      "mobileCrop": "none"
+    },
+    {
+      "file": "public/brand/social-preview.jpg",
+      "kind": "social",
+      "dimensions": "1200×630",
+      "source": "Generated from original Dental Nation enamel architecture artwork",
+      "usage": [
+        "Open Graph"
+      ],
+      "alt": "Dental Nation Clinic — Creating happier smiles",
+      "focalPoint": "65% 45%",
+      "mobileCrop": "not applicable"
+    },
+    {
+      "file": "public/media/hero/dental-fpv-poster.webp",
+      "kind": "opening film poster",
+      "dimensions": "1280×720 WebP",
+      "source": "First frame of the owner-supplied FPV opening film after web edit",
+      "usage": [
+        "opening film fallback",
+        "opening video poster"
+      ],
+      "alt": "First-person view flying out through a connected dental model toward the Goan coast",
+      "focalPoint": "54% 46%",
+      "mobileCrop": "favor right-side tooth sculpture"
+    },
+    {
+      "file": "public/images/team/natasha-lopez-fallback.svg",
+      "kind": "team fallback",
+      "dimensions": "900×1100 SVG",
+      "source": "Original non-likeness fallback; the component prefers the clinic's official published portrait",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_dfd3769a1c0d4d5794b2f3308da429cf~mv2.jpg",
+      "preferredLocalTarget": "/images/team/official/natasha-lopez.jpg",
+      "usage": [
+        "dentist Dr. Natasha Lopez"
+      ],
+      "alt": "Official portrait of Dr. Natasha Lopez",
+      "focalPoint": "50% 40%",
+      "mobileCrop": "portrait 4:5",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/team/neil-andrade-fallback.svg",
+      "kind": "team fallback",
+      "dimensions": "900×1100 SVG",
+      "source": "Original non-likeness fallback; the component prefers the clinic's official published portrait",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_5b3b1b9dab8241b8a2f663f3c90b54e4~mv2.jpg",
+      "preferredLocalTarget": "/images/team/official/neil-andrade.jpg",
+      "usage": [
+        "dentist Dr. Neil Andrade"
+      ],
+      "alt": "Official portrait of Dr. Neil Andrade",
+      "focalPoint": "50% 40%",
+      "mobileCrop": "portrait 4:5",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/team/yshanna-dsouza-fallback.svg",
+      "kind": "team fallback",
+      "dimensions": "900×1100 SVG",
+      "source": "Original non-likeness fallback; the component prefers the clinic's official published portrait",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_68cb350098a34ceabbea34eaacce823d~mv2.jpg",
+      "preferredLocalTarget": "/images/team/official/yshanna-dsouza.jpg",
+      "usage": [
+        "dentist Dr. Yshanna D'Souza"
+      ],
+      "alt": "Official portrait of Dr. Yshanna D'Souza",
+      "focalPoint": "50% 40%",
+      "mobileCrop": "portrait 4:5",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/team/archana-chavan-fallback.svg",
+      "kind": "team fallback",
+      "dimensions": "900×1100 SVG",
+      "source": "Original non-likeness fallback; the component prefers the clinic's official published portrait",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_68487eb7988748c097e399b280b857a0~mv2.jpg",
+      "preferredLocalTarget": "/images/team/official/archana-chavan.jpg",
+      "usage": [
+        "dentist Dr. Archana Chavan"
+      ],
+      "alt": "Official portrait of Dr. Archana Chavan",
+      "focalPoint": "50% 40%",
+      "mobileCrop": "portrait 4:5",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-01-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_7eae0b9dacad4e208c7b847912c455c6~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-01.jpg",
+      "usage": [
+        "gallery",
+        "home gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 1",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-02-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_1aa12619473c43bfbf749f5abd6b3726~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-02.jpg",
+      "usage": [
+        "gallery",
+        "home gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 2",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-03-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_63713ae36c034bcc8d37c1c17e3bd225~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-03.jpg",
+      "usage": [
+        "gallery",
+        "home gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 3",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-04-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_f79886f21836493c8c265b86206986eb~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-04.jpg",
+      "usage": [
+        "gallery",
+        "home gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 4",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-05-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_495233e7f4884f66a9af22031540bf75~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-05.jpg",
+      "usage": [
+        "gallery",
+        "home gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 5",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-06-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_eedb6a2ea0184c34a38715c801c7a2d1~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-06.jpg",
+      "usage": [
+        "gallery",
+        "home gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 6",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-07-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_01deb80cab734117b33bb03b5aec3328~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-07.jpg",
+      "usage": [
+        "gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 7",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-08-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_d9720bdf76f944c883e03487589cbe17~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-08.jpg",
+      "usage": [
+        "gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 8",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-09-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_3e4cbc54f84d4b399788aaf8456d17f1~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-09.jpg",
+      "usage": [
+        "gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 9",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/clinic/gallery-10-fallback.svg",
+      "kind": "gallery fallback",
+      "dimensions": "1200×900 SVG",
+      "source": "Original architectural offline fallback; implementation prefers the corresponding official Dental Nation website photograph",
+      "sourceUrl": "https://static.wixstatic.com/media/f2a471_524637ad45d844a78abd306769a95ce4~mv2.jpg",
+      "preferredLocalTarget": "/images/clinic/official/gallery-10.jpg",
+      "usage": [
+        "gallery"
+      ],
+      "alt": "Dental Nation Clinic gallery image 10",
+      "focalPoint": "center",
+      "mobileCrop": "center; adjust when official local binary is installed",
+      "packagedOfficialBinary": true,
+      "optimizedLocal": true
+    },
+    {
+      "file": "public/images/treatments/fillings.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/fillings"
+      ],
+      "alt": "Conceptual illustration for Fillings",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/crowns-and-bridges.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/crowns-and-bridges"
+      ],
+      "alt": "Conceptual illustration for Crowns and Bridges",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/root-canal-treatment.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/root-canal-treatment"
+      ],
+      "alt": "Conceptual illustration for Root Canal Treatment",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/teeth-cleaning.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/teeth-cleaning"
+      ],
+      "alt": "Conceptual illustration for Teeth Cleaning",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/dentures-and-partial-dentures.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/dentures-and-partial-dentures"
+      ],
+      "alt": "Conceptual illustration for Dentures and Partial Dentures",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/pediatric-dentistry.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/pediatric-dentistry"
+      ],
+      "alt": "Conceptual illustration for Pediatric Dentistry",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/extraction.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/extraction"
+      ],
+      "alt": "Conceptual illustration for Extraction",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/cosmetic-dentistry.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/cosmetic-dentistry"
+      ],
+      "alt": "Conceptual illustration for Cosmetic Dentistry",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/braces-and-aligners.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/braces-and-aligners"
+      ],
+      "alt": "Conceptual illustration for Braces and Aligners",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/dental-implants.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/dental-implants"
+      ],
+      "alt": "Conceptual illustration for Dental Implants",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/teeth-whitening.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/teeth-whitening"
+      ],
+      "alt": "Conceptual illustration for Teeth Whitening",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/wisdom-tooth-removal.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/wisdom-tooth-removal"
+      ],
+      "alt": "Conceptual illustration for Wisdom Tooth Removal",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/dental-x-ray.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/dental-x-ray"
+      ],
+      "alt": "Conceptual illustration for Dental X-Ray",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/nightguard-and-mouthguard.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/nightguard-and-mouthguard"
+      ],
+      "alt": "Conceptual illustration for Nightguard and Mouthguard",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/images/treatments/gum-treatment.svg",
+      "kind": "treatment concept",
+      "dimensions": "900×900 SVG",
+      "source": "Original conceptual dental illustration generated for this project; not a patient result",
+      "usage": [
+        "treatment index",
+        "/treatments/gum-treatment"
+      ],
+      "alt": "Conceptual illustration for Gum Treatment",
+      "focalPoint": "center",
+      "mobileCrop": "1:1"
+    },
+    {
+      "file": "public/scenes/hero.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "hero scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/intro.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "intro scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/treatments.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "treatments scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/journey.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "journey scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/team.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "team scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/gallery.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "gallery scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/trust.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "trust scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/read.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "read scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/visit.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "visit scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "file": "public/scenes/footer.svg",
+      "kind": "scene plate",
+      "dimensions": "1600×1000 SVG",
+      "source": "Original procedural architectural scene plate",
+      "usage": [
+        "footer scene preset"
+      ],
+      "alt": "decorative",
+      "focalPoint": "center",
+      "mobileCrop": "CSS object-cover; mobile motion reduced"
+    },
+    {
+      "alt": "Decorative silent FPV flight through a connected dental model toward the Goan coast",
+      "usage": [
+        "full-screen opening sequence"
+      ],
+      "reviewStatus": "candidate",
+      "source": "Owner-supplied Veo FPV clip, trimmed, cropped, muted and web encoded",
+      "dimensions": "1280×720 H.264 MP4, 8.25 seconds",
+      "kind": "opening film",
+      "file": "public/media/hero/dental-fpv-desktop.mp4"
+    }
+  ]
+}

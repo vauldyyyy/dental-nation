@@ -1,0 +1,26 @@
+[
+  {
+    "page": "home.html",
+    "viewport": "1440x1000",
+    "horizontalOverflow": false,
+    "pageErrors": []
+  },
+  {
+    "page": "home.html",
+    "viewport": "390x844",
+    "horizontalOverflow": false,
+    "pageErrors": []
+  },
+  {
+    "page": "treatments.html",
+    "viewport": "768x1024",
+    "horizontalOverflow": false,
+    "pageErrors": []
+  },
+  {
+    "page": "contact.html",
+    "viewport": "390x844",
+    "horizontalOverflow": false,
+    "pageErrors": []
+  }
+]

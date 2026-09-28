@@ -1,0 +1,4 @@
+"use client";
+import { motion } from "framer-motion";
+import { useMotionPreference } from "./MotionProvider";
+export default function JourneyLine(){const {motionPaused}=useMotionPreference();return <div className="journey-line" aria-hidden="true"><svg viewBox="0 0 1200 200" preserveAspectRatio="none"><motion.path d="M30 120 C250 15, 390 190, 595 100 S950 15 1170 105" initial={motionPaused?false:{pathLength:0,opacity:.2}} whileInView={{pathLength:1,opacity:1}} viewport={{once:true,amount:.35}} transition={{duration:2.1,ease:[.22,.61,.36,1]}}/>{[[54,110],[365,112],[710,86],[1137,94]].map(([cx,cy],i)=><motion.circle key={i} cx={cx} cy={cy} r="8" initial={motionPaused?false:{scale:0,opacity:0}} whileInView={{scale:1,opacity:1}} viewport={{once:true,amount:.35}} transition={{delay:.42+i*.34,duration:.35}}/>)}</svg></div>}

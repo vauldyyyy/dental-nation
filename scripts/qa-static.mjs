@@ -1,0 +1,21 @@
+import fs from "node:fs";import path from "node:path";import {fileURLToPath} from "node:url";
+import {treatments,articles,galleryRemote} from "../content/site.js";import {openingMedia,heroMedia} from "../content/hero.js";import {preferredDateInfo,waUrl,openStatus} from "../lib/business.js";
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");let errors=[];
+const required=["app/page.js","app/our-clinic/page.js","app/dentists/page.js","app/treatments/page.js","app/treatments/[slug]/page.js","app/gallery/page.js","app/first-visit/page.js","app/advice/page.js","app/advice/[slug]/page.js","app/contact/page.js","app/not-found.js","app/sitemap.js","app/robots.js","public/media/hero/dental-fpv-poster.webp","public/media/hero/dental-fpv-desktop.mp4","public/images/clinic/official/gallery-09.jpg","components/media/OpeningExperience.jsx","components/media/FilmChapter.jsx","content/films.js","content/treatment-media.js"];
+for(const f of required)if(!fs.existsSync(path.join(root,f)))errors.push(`Missing ${f}`);
+for(const t of treatments)if(!fs.existsSync(path.join(root,`public/images/treatments/${t.slug}.svg`)))errors.push(`Missing treatment art ${t.slug}`);
+for(const t of treatments)if(!fs.existsSync(path.join(root,`public/images/treatments/official/${t.slug}.webp`)))errors.push(`Missing official treatment image ${t.slug}`);
+if(openingMedia.enabled && !openingMedia.video)errors.push("Opening film enabled without video source");
+if(openingMedia.video && !fs.existsSync(path.join(root,"public",openingMedia.video.replace(/^\//,""))))errors.push("Configured opening film is absent");
+if(!heroMedia.still || !fs.existsSync(path.join(root,"public",heroMedia.still.replace(/^\//,""))))errors.push("Homepage hero still is absent");
+if(galleryRemote.length!==10)errors.push(`Expected 10 gallery sources, found ${galleryRemote.length}`);
+const past=preferredDateInfo("2020-01-01");if(past.valid)errors.push("Past date validation failed");
+const sun=preferredDateInfo("2026-10-04");if(sun.valid)errors.push("Sunday validation failed");
+const relationSlugs=new Set(treatments.map(t=>t.slug));for(const t of treatments){for(const r of t.related||[])if(!relationSlugs.has(r))errors.push(`Unknown related treatment ${r} from ${t.slug}`);}
+const openMorning=openStatus(new Date("2026-09-28T04:30:00Z"));if(!openMorning.open)errors.push("Monday 10:00 IST should be open");const lunch=openStatus(new Date("2026-09-28T08:30:00Z"));if(lunch.open||!lunch.text.includes("lunch"))errors.push("Monday 14:00 IST should be lunch closure");const openAfternoon=openStatus(new Date("2026-09-28T11:30:00Z"));if(!openAfternoon.open)errors.push("Monday 17:00 IST should be open");const closedSunday=openStatus(new Date("2026-10-04T06:00:00Z"));if(closedSunday.open)errors.push("Sunday should be closed");
+const msg="Name: Test Person\nTreatment: Fillings\nPreferred date: 2026-10-05\nPreferred period: Morning";const wa=waUrl(msg);if(!wa.startsWith("https://wa.me/919270552454?text="))errors.push("WhatsApp URL destination invalid");if(!decodeURIComponent(wa).includes("Treatment: Fillings"))errors.push("WhatsApp message encoding invalid");
+const sourceFiles=[];function walk(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name);if(e.isDirectory())walk(p);else if(/\.(js|jsx)$/.test(e.name))sourceFiles.push(p)}}for(const dir of ["app","components","lib","content"])walk(path.join(root,dir));
+for(const f of sourceFiles){const s=fs.readFileSync(f,"utf8");if(/href=["']#["']/.test(s))errors.push(`Empty hash link in ${path.relative(root,f)}`);const re=/from\s+["'](\.{1,2}\/[^"']+)["']/g;let m;while((m=re.exec(s))){const base=path.resolve(path.dirname(f),m[1]);const candidates=[base,base+".js",base+".jsx",path.join(base,"index.js"),path.join(base,"index.jsx")];if(!candidates.some(fs.existsSync))errors.push(`Unresolved local import ${m[1]} in ${path.relative(root,f)}`)}}
+if(errors.length){console.error("QA FAILED\n"+errors.map(x=>`- ${x}`).join("\n"));process.exit(1)}
+console.log(`Static QA OK: ${required.length} route/system files, ${treatments.length} treatment artworks, ${articles.length} article routes, WhatsApp encoding and date rules verified.`);
+console.log(`Prepared WhatsApp test URL: ${wa}`);
