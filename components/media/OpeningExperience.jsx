@@ -19,11 +19,21 @@ export default function OpeningExperience() {
   const isOpen = isHome && visible;
 
   useEffect(() => {
-    if (!isHome) setVisible(false);
+    // A section link should reach its destination instead of playing the
+    // homepage film over a page that cannot scroll to its anchor yet.
+    if (!isHome || window.location.hash) setVisible(false);
   }, [isHome]);
 
   const finish = useCallback(() => {
     setVisible(false);
+  }, []);
+
+  const focusDestination = useCallback(() => {
+    document.getElementById("main-content")?.focus({ preventScroll: true });
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    try { document.getElementById(decodeURIComponent(hash))?.scrollIntoView({ block: "start" }); }
+    catch { /* Ignore a malformed hash and leave the page usable. */ }
   }, []);
 
   useEffect(() => {
@@ -46,7 +56,7 @@ export default function OpeningExperience() {
     videoRef.current?.play().catch(() => setAutoplayBlocked(true));
   }, [isOpen]);
 
-  return <AnimatePresence onExitComplete={() => document.getElementById("main-content")?.focus()}>
+  return <AnimatePresence onExitComplete={focusDestination}>
     {isOpen && <motion.div
       className="opening"
       role="dialog"
