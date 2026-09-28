@@ -91,7 +91,7 @@ export default function OpeningExperience() {
           {autoplayBlocked && <button type="button" className="opening__watch" onClick={() => {
             videoRef.current?.play().then(() => setAutoplayBlocked(false)).catch(finish);
           }}>Play opening film</button>}
-          <div className="opening__progress-label"><span>OPENING FILM</span><span>{String(progress).padStart(2, "0")}%</span></div>
+          <div className="opening__progress-label"><span>LOADING THE SITE</span><span>{String(progress).padStart(2, "0")}%</span></div>
           <div className="opening__progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
         </div>
       </div>
